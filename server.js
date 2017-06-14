@@ -7,7 +7,8 @@ var logger = require('./logger');
 function host(options) {
   options = merge(defaults,options);
 
-  logger.debug(options);
+  const optionsAsString = JSON.stringify(options, null, '\t');
+  logger.debug(`Options 👉 ${optionsAsString}`);
 
   options.setHeaders = (req, path) => { setHeaders(req, path, options); };
 
