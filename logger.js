@@ -12,8 +12,12 @@ function debug(message) {
   log('bonfire (DEBUG):', message);
 }
 
+function noop() {}
+
+const isProd = process.env.NODE_ENV === "production";
+
 module.exports = {
-  debug,
+  debug: isProd ? noop : debug,
   info,
   error
 };
