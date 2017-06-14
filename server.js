@@ -7,7 +7,8 @@ var logger = require('./logger');
 function host(options) {
   options = merge(defaults,options);
 
-  logger.debug(options);
+  const optionsAsString = JSON.stringify(options, null, '\t');
+  logger.debug(`Options 👉 ${optionsAsString}`);
 
   options.setHeaders = (req, path) => { setHeaders(req, path, options); };
 
@@ -22,7 +23,7 @@ function host(options) {
     var host = server.address().address;
     var port = server.address().port;
 
-    logger.info('Listening at http://%s:%s', host, port);
+    logger.info(`Listening at http://${host}:${port}`);
   });
 }
 
