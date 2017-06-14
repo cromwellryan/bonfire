@@ -1,6 +1,6 @@
 {
   "name": "@sparkbox/bonfire",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simple static hosting the just works.",
   "scripts": {
     "test": "echo \"I'm a bad person\""
